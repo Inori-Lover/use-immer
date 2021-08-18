@@ -1,7 +1,7 @@
 {
   "name": "use-immer",
   "version": "1.0.0",
-  "description": "immer version useState & useReducer",
+  "description": "immer version useState",
   "main": "umd/index.js",
   "umd:main": "umd/index.js",
   "source": "src/index.ts",
@@ -17,8 +17,7 @@
     "hook",
     "react-hook",
     "immer",
-    "useState",
-    "useReducer"
+    "useState"
   ],
   "author": "inori",
   "license": "MIT",

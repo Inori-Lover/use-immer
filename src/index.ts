@@ -1,1 +1,1 @@
-export function useImmer() {}
+export function useImmer<T>(init?: T) {}
