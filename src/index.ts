@@ -10,6 +10,12 @@ export type SetStateAction<S> = S | ((prevState: S) => S | void);
 function useImmer<S>(init: S | (() => S)): [S, Dispatch<SetStateAction<S>>] {
   const [initState] = useState(init);
 
+  if (typeof initState === "function") {
+    console.warn(
+      "不推荐在useState/useImmer中记录函数，会破坏setState操作的type-safe"
+    );
+  }
+
   /** reducer声明在hook内是因为想要继承泛型，提出外部之后就没法type-safe了 */
   const reducer = useCallback((prevState: S, action: SetStateAction<S>): S => {
     let nextState = prevState;
